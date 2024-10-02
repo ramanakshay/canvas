@@ -1,0 +1,17 @@
+environment:
+    name: Acrobot-v1
+    max_ep_steps: 500
+    obs_dim: 6
+    act_dim: 3
+
+agent:
+    obs_dim: ${environment.obs_dim}
+    act_dim: ${environment.act_dim}
+    hidden_dim: 64
+    learning_rate: 1e-3
+
+algorithm:
+    total_timesteps: 150000
+    timesteps_per_batch: 2500
+    lambda: 0.9
+    gamma: 0.99
