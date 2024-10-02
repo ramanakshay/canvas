@@ -30,7 +30,7 @@ class BasePolicyGradient(object):
         return ep_obs, ep_acts, ep_rews, ep_len
 
     def generate_batch(self):
-        timesteps_per_batch = self.config["timesteps_per_batch"]
+        timesteps_per_batch = self.config.timesteps_per_batch
         batch_obs, batch_acts, batch_rews, batch_lens = [], [], [], []
         timestep = 0
         while (timestep < timesteps_per_batch):
@@ -44,7 +44,7 @@ class BasePolicyGradient(object):
         return batch_obs, batch_acts, batch_rews, batch_lens
 
     def run(self):
-        total_timesteps = self.config["total_timesteps"]
+        total_timesteps = self.config.total_timesteps
         iteration, timestep = 0, 0
         while (timestep < total_timesteps):
             self.model.enable_grad(False)
@@ -78,8 +78,8 @@ class VanillaPolicyGradient(BasePolicyGradient):
         BasePolicyGradient.__init__(self, model, env, config)
 
     def calculate_advantage(self, batch_obs, batch_rews):
-        gamma = self.config["gamma"]
-        lam = self.config["lam"]
+        gamma = self.config.gamma
+        lam = self.config.lam
 
         batch_lam = []
         for ep_num in range(len(batch_rews)):
