@@ -15,7 +15,7 @@ def main(config : DictConfig) -> None:
     model = DiscreteActorCritic(config.agent)
 
     ## ALGORITHM ##
-    alg = VanillaPolicyGradient(model, env, config.algorithm)
+    alg = VanillaPolicyGradient(env, model, config.algorithm)
     alg.run()
 
 if __name__ == "__main__":

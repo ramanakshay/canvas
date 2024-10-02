@@ -2,7 +2,7 @@ import numpy as np
 import torch
 
 class BasePolicyGradient(object):
-    def __init__(self, model, env, config):
+    def __init__(self, env, model, config):
         self.model = model
         self.env = env
         self.config = config

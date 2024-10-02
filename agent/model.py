@@ -9,8 +9,8 @@ from agent.network import MLP
 class DiscreteActorCritic(object):
     def __init__(self, config):
         self.config = config
-        self.obs_dim, self.act_dim = self.config["obs_dim"], self.config["act_dim"]
-        self.hidden_dim = self.config["hidden_dim"]
+        self.obs_dim, self.act_dim = self.config.obs_dim, self.config.act_dim
+        self.hidden_dim = self.config.hidden_dim
         self.device = (
             "cuda" if torch.cuda.is_available()
             else "mps" if torch.backends.mps.is_available()
@@ -20,8 +20,8 @@ class DiscreteActorCritic(object):
         self.actor = MLP(self.obs_dim, self.act_dim, self.hidden_dim)
         self.critic = MLP(self.obs_dim, 1, self.hidden_dim)
 
-        self.actor_optim = Adam(self.actor.parameters(), lr = self.config["learning_rate"])
-        self.critic_optim = Adam(self.critic.parameters(), lr = self.config["learning_rate"])
+        self.actor_optim = Adam(self.actor.parameters(), lr = self.config.learning_rate)
+        self.critic_optim = Adam(self.critic.parameters(), lr = self.config.learning_rate)
         self.grad_enabled = False
 
     def enable_grad(self, mode):
