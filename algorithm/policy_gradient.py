@@ -72,7 +72,6 @@ class BasePolicyGradient(object):
         raise NotImplementedError('`calculate_losses` function not implemented.')
 
 
-
 class VanillaPolicyGradient(BasePolicyGradient):
     def __init__(self, model, env, config):
         BasePolicyGradient.__init__(self, model, env, config)
