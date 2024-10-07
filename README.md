@@ -1,2 +1,15 @@
 # canvas
-A scalable pytorch template for machine learning tasks.
+
+## Installation
+
+## Requirements
+
+## Table Of Contents
+
+## Motivation
+
+## Folder Structure
+
+## Contributions
+
+## License
