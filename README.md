@@ -48,7 +48,7 @@ python main.py
 ## Requirements
 - [pytorch](https://pytorch.org/) (An open source deep learning platform)
 - [hydra](https://hydra.cc/) (A framework for configuring complex applications)
-- [gymnasium](A standard for reinforcment learning tasks)
+- [gymnasium](https://gymnasium.farama.org/index.html) (An API standard for reinforcment learning tasks)
 
 # Details
 
